@@ -1044,8 +1044,6 @@ end
 
 class Class
   def any_instance(); end
-
-  def json_creatable?(); end
 end
 
 class CompilerSelector::Compiler
@@ -2959,12 +2957,6 @@ class JSON::Ext::Parser
   def initialize(*arg); end
 end
 
-JSON::Parser = JSON::Ext::Parser
-
-JSON::State = JSON::Ext::Generator::State
-
-JSON::UnparserError = JSON::GeneratorError
-
 class Keg::ConflictError
   extend ::T::Private::Methods::MethodHooks
   extend ::T::Private::Methods::SingletonMethodHooks
@@ -3387,13 +3379,7 @@ end
 
 Net::HTTPFatalErrorCode = Net::HTTPClientError
 
-class Net::HTTPInformation
-end
-
-Net::HTTPInformationCode::EXCEPTION_TYPE = Net::HTTPError
-
-class Net::HTTPInformation
-end
+Net::HTTPInformationCode = Net::HTTPInformation
 
 class Net::HTTPLoopDetected
   HAS_BODY = ::T.let(nil, ::T.untyped)
@@ -3453,13 +3439,7 @@ Net::HTTPServerErrorCode = Net::HTTPServerError
 
 Net::HTTPSession = Net::HTTP
 
-class Net::HTTPSuccess
-end
-
-Net::HTTPSuccessCode::EXCEPTION_TYPE = Net::HTTPError
-
-class Net::HTTPSuccess
-end
+Net::HTTPSuccessCode = Net::HTTPSuccess
 
 class Net::HTTPURITooLong
   HAS_BODY = ::T.let(nil, ::T.untyped)
